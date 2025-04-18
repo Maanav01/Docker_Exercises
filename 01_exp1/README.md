@@ -1,82 +1,61 @@
-# 🚀 Getting Started with Docker
+# 🚀 DockerLab1 - Hello World Container
 
-## 🌟 Overview
-
-This is a simple project designed to demonstrate containerization using Docker. It includes a lightweight Python script (`hello.py`) that prints `"hello"` to the console when executed inside a Docker container.
-
-This setup provides:
-- Easy deployment
-- Environment consistency
-- A perfect intro to Docker fundamentals
+This is a minimal Docker project demonstrating the basics of containerization using Python. It includes a simple script that prints "hello" to the console inside a Docker container.
 
 ---
 
-## 📂 Project Structure
+## 📁 Project Structure
 
-📁 DockerLab1/ ├── 📜 Dockerfile # Defines the Docker image and execution instructions ├── 🐍 hello.py # Python script that prints "hello" └── 📖 README.md # Project documentation
-
-
----
-
-## 🔧 Prerequisites
-
-Before starting, ensure the following is installed on your system:
-
-- 🐳 [Docker](https://docs.docker.com/get-docker/)
+```
+DockerLab1/
+├── Dockerfile        # Docker image definition
+├── hello.py          # Python script that prints 'hello'
+└── README.md         # Project documentation
+```
 
 ---
 
-## 🚀 Installation & Setup
+## ⚙️ Prerequisites
 
-### 1️⃣ Clone the Repository
+- Docker installed on your system → [Install Docker](https://docs.docker.com/get-docker/)
+
+---
+
+## 🛠️ Steps to Run
+
+### 📦 1. Clone the Repository
 
 ```bash
-git clone <repository_url>
-cd DockerLab1
+git clone https://github.com/Maanav01/Docker_Exercises.git
+cd Docker_Exercises/DockerLab1
+```
 
-2️⃣ Build the Docker Image
+### 🧱 2. Build the Docker Image
 
-Build the image using the Dockerfile:
-
+```bash
 docker build -t hello .
+```
 
-3️⃣ Run the Docker Container
+### 🚀 3. Run the Container
 
-Run the container, which will execute hello.py inside:
-
+```bash
 docker run hello
+```
 
-🛠️ How It Works
+✔️ Output should display:
 
-    The Dockerfile uses the official python:3-slim image.
+```
+hello
+```
 
-    Sets environment variables to optimize Python behavior inside the container.
+---
 
-    Copies hello.py into the image.
+## 📜 Dockerfile Used
 
-    The container runs python hello.py upon startup, printing hello in the console.
-
-🔄 Stopping & Cleaning Up
-Check Running Containers
-
-docker ps
-
-Stop a Container
-
-docker stop <container_id>
-
-Remove Unused Images
-
-docker image prune -a
-
-📜 Dockerfile Reference
-
+```Dockerfile
 FROM python:3-slim
 
-# Keeps Python from generating .pyc files
 ENV PYTHONDONTWRITEBYTECODE=1
-
-# Turns off buffering for easier logging
 ENV PYTHONUNBUFFERED=1
 
 WORKDIR .
@@ -84,10 +63,35 @@ WORKDIR .
 COPY hello.py .
 
 CMD ["python", "hello.py"]
+```
 
-🙌 Thank You!
+---
 
-Thanks for checking out DockerLab1!
-If you found this helpful or have suggestions, feel free to contribute or reach out.
+## 🧹 Clean Up
 
-Happy Containerizing! 🐳🚀
+To see running containers:
+
+```bash
+docker ps
+```
+
+To stop a container:
+
+```bash
+docker stop <container_id>
+```
+
+To remove unused images:
+
+```bash
+docker image prune -a
+```
+
+---
+
+## 🙌 Final Note
+
+This lab provides a great first step in learning Docker.  
+Feel free to modify, extend, or containerize your own scripts next!
+
+Happy Containerizing! 🐳
