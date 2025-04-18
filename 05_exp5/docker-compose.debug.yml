@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+  lab:
+    image: lab
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    command: ["sh", "-c", "pip install debugpy -t /tmp && python /tmp/debugpy --wait-for-client --listen 0.0.0.0:5678 dockerlab4/stream.py "]
+    ports:
+      - 5678:5678
