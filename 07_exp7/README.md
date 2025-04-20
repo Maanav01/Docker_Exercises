@@ -131,7 +131,8 @@ pip install -r requirements.txt
 ```sh
 docker build -t evidently .
 ```
-![alt text](image-1.png)
+![1](https://github.com/user-attachments/assets/4f1601e8-cd80-430c-a35b-191014d3a71e)
+
 
 📌 This creates a Docker image named `evidently`.
 
@@ -140,7 +141,8 @@ docker build -t evidently .
 ```sh
 docker run -p 8501:8501 evidently
 ```
-![alt text](image.png)
+![2](https://github.com/user-attachments/assets/4f7e3072-acb4-49e4-8756-845be6a4ba00)
+
 
 📌 This runs the Evidently AI dashboard inside a container and maps port `8501`.
 
