@@ -42,7 +42,8 @@ Verify network creation:
 ```sh
 docker network ls
 ```
-![alt text](image.png)
+![Screenshot from 2025-04-18 19-48-23](https://github.com/user-attachments/assets/cfd3737e-7a89-404a-875c-369e65de4c1b)
+
 
 ✅ *Expected Output:* The list should now include `net-bridge` under the `bridge` driver.
 
@@ -54,7 +55,8 @@ docker network ls
 ```sh
 docker run -itd --net=net-bridge --name=cont_database redis
 ```
-![alt text](image-1.png)
+![Screenshot from 2025-04-18 19-49-30](https://github.com/user-attachments/assets/822126c3-1935-4cb3-8a93-73c04b32a17e)
+
 
 🔹 *This runs a Redis container in detached mode and attaches it to `net-bridge`.*
 
@@ -62,7 +64,8 @@ docker run -itd --net=net-bridge --name=cont_database redis
 ```sh
 docker run -dit --name server-A --network net-bridge busybox
 ```
-![alt text](image-2.png)
+![Screenshot from 2025-04-18 19-49-53](https://github.com/user-attachments/assets/69ce166e-53c4-4377-8a44-9d84c8fc08a5)
+
 
 🔹 *This launches a lightweight BusyBox container in interactive mode.*
 
@@ -86,7 +89,8 @@ docker inspect cont_database
 ```sh
 docker inspect --format "{{range .NetworkSettings.Networks}}{{.IPAddress}} {{end}}" cont_database
 ```
-![alt text](image-4.png)
+![Screenshot from 2025-04-18 19-50-25](https://github.com/user-attachments/assets/0c914d6c-3f82-42cb-8a5b-da440722d126)
+
 
 🔹 *Use the extracted IP address for direct communication testing.*
 
@@ -104,7 +108,8 @@ docker exec -it server-A sh
 ```sh
 ping 172.20.240.1  # Replace with actual container IP
 ```
-![alt text](image-3.png)
+![Screenshot from 2025-04-18 19-50-58](https://github.com/user-attachments/assets/183b3f3c-f753-4170-bf4f-94ea51555fdd)
+
 
 ✅ *If successful, this confirms that containers can communicate via IPs.*
 
@@ -112,7 +117,8 @@ ping 172.20.240.1  # Replace with actual container IP
 ```sh
 ping cont_database
 ```
-![alt text](image-5.png)
+![Screenshot from 2025-04-18 19-51-18](https://github.com/user-attachments/assets/9958f9fe-df64-4dde-ba1e-e39ed0873a83)
+
 
 🔹 *This checks if Docker's built-in DNS resolves container names correctly.*
 
