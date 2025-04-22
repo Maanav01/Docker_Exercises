@@ -35,6 +35,8 @@ cd Docker_Exercises/DockerLab1
 ```bash
 docker build -t hello .
 ```
+![Screenshot from 2025-04-18 15-38-23](https://github.com/user-attachments/assets/93e2b0c1-3208-4b7b-9918-719996db5f3d)
+
 
 ### 🚀 3. Run the Container
 
