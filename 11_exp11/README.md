@@ -59,7 +59,8 @@ Verify Minikube installation:
 ```bash
 minikube version
 ```
-![alt text](image.png)
+![1](https://github.com/user-attachments/assets/30c3e4a8-9dee-4832-9ada-14eda1c52419)
+
 
 ### 3️⃣ Install kubectl
 
@@ -74,7 +75,8 @@ Verify installation:
 ```bash
 kubectl version --client
 ```
-![alt text](image-1.png)
+![2](https://github.com/user-attachments/assets/2a949f5d-3655-4dcf-b21d-57ec1dfbf69f)
+
 
 ---
 
@@ -123,11 +125,14 @@ Retrieve the URL to access the Nginx web server:
 ```bash
 minikube service nginx --url
 ```
+![4](https://github.com/user-attachments/assets/c8ca4e02-c46c-4881-b3aa-d8fdccf30421)
+
 
 👉 Open the URL in your browser to see the running **Nginx web server**. 🌐
 
 ---
-![alt text](image-2.png)
+![3](https://github.com/user-attachments/assets/299dbee9-4a2d-4127-8fa2-dcebe7af671e)
+
 
 
 ## ✅ Step 4: Manage Kubernetes Cluster
