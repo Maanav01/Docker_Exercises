@@ -35,14 +35,21 @@ This is a multi-page Streamlit application that demonstrates a complete machine 
    ```bash
    docker build -t ml-streamlit-app .
    ```
+   ![1](https://github.com/user-attachments/assets/12471912-1200-4cab-addb-14d84ffdb5cc)
 
 3. **Run the Docker container**:
    ```bash
    docker run -p 8501:8501 ml-streamlit-app
    ```
+   ![2](https://github.com/user-attachments/assets/083095a1-735f-47aa-b63c-54089d15d943)
 
 4. **Access the app**:
    Open your browser and navigate to `http://localhost:8501`.
+   ![3](https://github.com/user-attachments/assets/e1619769-1d52-4b02-b360-52924a6420cd)
+   ![4](https://github.com/user-attachments/assets/1b998bd1-66d6-43be-b3f5-05bdfd04ecbb)
+   ![5](https://github.com/user-attachments/assets/c3b50d22-e215-4672-b90a-5e0ec37ca294)
+   ![6](https://github.com/user-attachments/assets/ffa20a4d-6faa-47fc-a1fc-28bf73ecf1b6)
+
 
 ## Usage
 
