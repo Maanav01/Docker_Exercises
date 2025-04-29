@@ -143,7 +143,19 @@ elif page == "Visualization & SHAP":
         sample_idx = st.slider("Select sample index", 0, len(X)-1, 0)
         shap_values_sample = explainer(X.iloc[[sample_idx]])
         
+        # Select the class to visualize (e.g., class 0)
+        class_idx = 0  # You can make this selectable if needed
+        shap_values_for_class = shap_values[class_idx][sample_idx]  # SHAP values for the selected class and sample
+        
+        # Create a SHAP Explanation object for the selected class
+        explanation = shap.Explanation(
+            values=shap_values_for_class,
+            base_values=explainer.expected_value[class_idx],
+            data=X.iloc[sample_idx],
+            feature_names=X.columns
+        )
+        
+        # Use waterfall_plot with the Explanation object
         shap_fig = go.Figure()
-        shap.force_plot(explainer.expected_value[0], shap_values_sample.values[0], 
-                       X.iloc[sample_idx], show=False, matplotlib=True)
+        shap.waterfall_plot(explanation, show=False)
         st.pyplot(bbox_inches='tight')
